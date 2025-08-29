@@ -1,0 +1,6 @@
+@CriandoCadastro.Api_HostAddress = http://localhost:5205
+
+GET {{CriandoCadastro.Api_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
