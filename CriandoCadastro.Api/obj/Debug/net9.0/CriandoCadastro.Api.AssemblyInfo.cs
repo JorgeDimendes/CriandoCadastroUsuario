@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("CriandoCadastro.Api")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a59e27d686904a1308b7635e911eea5a1e2a0650")]
 [assembly: System.Reflection.AssemblyProductAttribute("CriandoCadastro.Api")]
 [assembly: System.Reflection.AssemblyTitleAttribute("CriandoCadastro.Api")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -271,3 +271,8 @@
 /home/gutssama/Documentos/Web Api C#/Hotmart/CriandoCadastro/CriandoCadastro.Api/bin/Debug/net9.0/tr/Microsoft.CodeAnalysis.Scripting.resources.dll
 /home/gutssama/Documentos/Web Api C#/Hotmart/CriandoCadastro/CriandoCadastro.Api/bin/Debug/net9.0/zh-Hans/Microsoft.CodeAnalysis.Scripting.resources.dll
 /home/gutssama/Documentos/Web Api C#/Hotmart/CriandoCadastro/CriandoCadastro.Api/bin/Debug/net9.0/zh-Hant/Microsoft.CodeAnalysis.Scripting.resources.dll
+/home/gutssama/Documentos/Web Api C#/Hotmart/CriandoCadastro/CriandoCadastro.Api/obj/Debug/net9.0/CriandoCadastro.Api.sourcelink.json
+/home/gutssama/Documentos/Web Api C#/Hotmart/CriandoCadastro/CriandoCadastro.Api/bin/Debug/net9.0/Scalar.AspNetCore.dll
+/home/gutssama/Documentos/Web Api C#/Hotmart/CriandoCadastro/CriandoCadastro.Api/bin/Debug/net9.0/Swashbuckle.AspNetCore.Swagger.dll
+/home/gutssama/Documentos/Web Api C#/Hotmart/CriandoCadastro/CriandoCadastro.Api/bin/Debug/net9.0/Swashbuckle.AspNetCore.SwaggerGen.dll
+/home/gutssama/Documentos/Web Api C#/Hotmart/CriandoCadastro/CriandoCadastro.Api/bin/Debug/net9.0/Swashbuckle.AspNetCore.SwaggerUI.dll
