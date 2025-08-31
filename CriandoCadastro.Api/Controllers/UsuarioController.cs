@@ -34,5 +34,12 @@ namespace CriandoCadastro.Api.Controllers
             var usuarioInserido = await _usuarioInterface.Post(usuario);
             return Ok(usuarioInserido);
         }
+
+        [HttpDelete("{id}")]
+        public async Task<ActionResult> Delete(int id)
+        {
+            var localizaUsuario = await _usuarioInterface.Delete(id);
+            return Ok(localizaUsuario);
+        }
     }
 }

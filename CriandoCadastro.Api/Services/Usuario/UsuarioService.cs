@@ -1,4 +1,5 @@
 using CriandoCadastro.Api.Data;
+using CriandoCadastro.Api.DTO.Usuario;
 using CriandoCadastro.Api.Model;
 using Microsoft.EntityFrameworkCore;
 
@@ -63,13 +64,21 @@ public class UsuarioService : IUsuarioInterface
         }
     }
 
-    public async Task<ResponseModel<UsuarioModel>> Post(UsuarioModel usuario)
+    public async Task<ResponseModel<UsuarioCriacaoDto>> Post(UsuarioCriacaoDto usuarioCriacao)
     {
-        var response = new ResponseModel<UsuarioModel>();
+        var response = new ResponseModel<UsuarioCriacaoDto>();
 
         try
         {
-            var usuarioInserido = await _Context.Usuarios.AddAsync(usuario);
+            if (!verificaSeExisteEmailUsuarioRepetido(usuarioCriacao))
+            {
+                response.Mensagem = "Email/Usuario já cadastrado";
+                return response;
+            }
+            
+            
+            
+            var usuarioInserido = await _Context.AddAsync(usuarioCriacao);
             if (usuarioInserido == null)
             {
                 response.Mensagem = "Erro ao cadastrar usuario";
@@ -94,8 +103,41 @@ public class UsuarioService : IUsuarioInterface
         throw new NotImplementedException();
     }
 
-    public Task<ResponseModel<UsuarioModel>> Delete(int id)
+    public async Task<ResponseModel<UsuarioModel>> Delete(int id)
     {
-        throw new NotImplementedException();
+        var response = new ResponseModel<UsuarioModel>();
+        
+        try
+        {
+            var usuario = await _Context.Usuarios.FirstOrDefaultAsync(u => u.Id == id);
+            if (usuario == null)
+            {
+                response.Mensagem = "Nennhum usuario localizado";
+                return response;
+            }
+            _Context.Remove(usuario);
+            await _Context.SaveChangesAsync();
+            
+            response.Mensagem = $"Usuario {usuario.Nome} removido com sucesso";
+            return response;
+        }
+        catch (Exception ex)
+        {
+            response.Mensagem = ex.Message;
+            response.Status = false;
+            return response;
+        }
+    }
+    
+    //Verificacao
+    private bool verificaSeExisteEmailUsuarioRepetido(UsuarioCriacaoDto usuarioCriacao)
+    {
+        var usuario = _Context.Usuarios.FirstOrDefault(item => item.Email == usuarioCriacao.Email ||
+                                                                          item.Usuario == usuarioCriacao.Usuario);
+        if (usuario != null)
+        {
+            return false;
+        }
+        return true;
     }
 }
